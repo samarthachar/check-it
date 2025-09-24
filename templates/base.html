@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" href="/static/logo.png" type="image/png">
+   <title>Check-It</title>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- Header -->
+<header class="p-3 text-bg-dark">
+   <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+               <use xlink:href="#bootstrap"></use>
+            </svg>
+         </a>
+         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{{ url_for('home') }}" class="nav-link px-2 text-secondary">Home</a></li>
+            <li><a href="{{ url_for('pricing') }}" class="nav-link px-2 text-white">Pricing</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link px-2 text-white">About</a></li>
+         </ul>
+          {% if not logged_in %}
+         <div class="text-end"> <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='{{ url_for('login') }}'">Log In</button> <button type="button" class="btn btn-warning" onclick="window.location.href='{{ url_for('signup') }}'">Sign Up</button> </div>
+          {% else %}
+          <button type="button" class="btn btn-warning" onclick="window.location.href='{{ url_for('logout') }}'">Log Out</button> </div>
+          {% endif %}
+      </div>
+   </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<div class="container">
+   <footer class="py-3 my-4">
+      <div class="nav justify-content-center border-bottom pb-3 mb-3">
+      </div>
+      <p class="text-center text-body-secondary">© 2025 Check-it, Inc</p>
+   </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

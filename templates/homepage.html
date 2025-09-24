@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero -->
+
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+   <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Finish Your To-Dos Here. </h1>
+      <div class="col-lg-6 mx-auto">
+         <p class="fs-5 mb-4">Instead of paying for tools like this, use your money where it really matters.</p>
+         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+         <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onclick="window.location.href='{{ url_for('login') }}'">Log In</button>
+         <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onclick="window.location.href='{{ url_for('signup') }}'">Sign Up</button>
+         <button type="button" class="btn btn-outline-light btn-lg px-4" onclick="window.location.href='{{ url_for('todo', todo_name='Todo1') }}'">Continue as Guest</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Hanging Icons -->
+
+<div class="container px-4 py-5" id="hanging-icons">
+   <h2 class="pb-2 border-bottom">Let’s Get You Organized</h2>
+   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+         <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <svg class="bi" width="1em" height="1em" aria-hidden="true">
+               <use xlink:href="#toggles2"></use>
+            </svg>
+         </div>
+         <div>
+            <h3 class="fs-2 text-body-emphasis">Plan with Purpose</h3>
+            <p>Discover a smarter way to manage your tasks. Our intuitive layout keeps everything clear, focused, and right where you need it.</p>
+
+         </div>
+      </div>
+      <div class="col d-flex align-items-start">
+         <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <svg class="bi" width="1em" height="1em" aria-hidden="true">
+               <use xlink:href="#cpu-fill"></use>
+            </svg>
+         </div>
+         <div>
+            <h3 class="fs-2 text-body-emphasis">Stay on Track</h3>
+            <p>Stay on top of your goals with tools that work for you—not against you. Simple, sleek, and built for momentum.</p>
+
+         </div>
+      </div>
+      <div class="col d-flex align-items-start">
+         <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+            <svg class="bi" width="1em" height="1em" aria-hidden="true">
+               <use xlink:href="#tools"></use>
+            </svg>
+         </div>
+         <div>
+            <h3 class="fs-2 text-body-emphasis">Finish What Matters</h3>
+            <p>From daily to-dos to big-picture planning, we’ve got you covered. No clutter, no distractions—just pure productivity.</p>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Jumbotron -->
+<div class="container my-5">
+   <div class="p-5 text-center bg-body-tertiary rounded-3">
+      <h1 class="text-body-emphasis">Welcome to Effortless Productivity</h1>
+      <p class="col-lg-8 mx-auto fs-5 text-muted">
+         Say goodbye to cluttered dashboards and overpriced tools. Our platform gives you everything you need to organize, prioritize, and finish your tasks—without the noise. Designed for clarity, built for speed, and always free. Whether you're planning your next big idea or just trying to stay on top of daily goals, you're in the right place.
+      </p>
+   </div>
+</div>
+
+
+
+{% endblock %}

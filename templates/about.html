@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero -->
+<div class="px-4 py-5 my-5 text-center">
+   <img class="d-block mx-auto mb-4 rounded-circle" src="{{ url_for('static', filename='avatar.jpg') }}" alt="Sam's Face" width="100" height="100">
+   <h1 class="display-5 fw-bold text-body-emphasis">Samarth Achar. That's Me :)</h1>
+   <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Hi there! I’m a 14-year-old developer with a passion for building cool things—like this very website. I designed and coded it entirely myself as a portfolio project, and I keep it evolving with updates whenever inspiration (or caffeine) strikes. It’s a work in progress, just like me.</p>
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+  <a href="https://github.com/samarthachar" class="btn btn-primary btn-lg px-4 gap-3">
+    Check out my GitHub!
+  </a>
+  <a href="#" class="btn btn-outline-secondary btn-lg px-4">
+    And my LinkedIn too!
+  </a>
+</div>
+   </div>
+</div>
+
+
+{% endblock %}
