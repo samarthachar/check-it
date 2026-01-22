@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort, request, url_for, redirect, jsonify, flash
+from flask import Flask, render_template, abort, request, url_for, redirect, flash
 from flask_bootstrap import Bootstrap
 import secrets
 from flask import Flask, render_template,redirect, url_for
